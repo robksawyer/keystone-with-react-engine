@@ -29,3 +29,6 @@ node_modules
 
 # Ignore .DS_Store files on OS X
 .DS_Store
+
+# Don't include the bundle. This is generated via webpack or npm start
+public/js/bundle.**
