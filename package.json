@@ -16,13 +16,16 @@
     "node-sass-middleware": "^0.9.7",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "react-engine": "^4.2.0",
     "webpack": "^2.4.1"
   },
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
     "eslint": "^2.12.0",
     "eslint-config-keystone": "^2.3.1",
-    "eslint-plugin-react": "^5.1.1"
+    "eslint-plugin-react": "^5.1.1",
+    "webpack": "^2.4.1"
   },
   "scripts": {
     "lint": "eslint .",
