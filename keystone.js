@@ -1,17 +1,23 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').config();
+import dotenv from 'dotenv';
 
 // Require keystone
-var keystone = require('keystone');
-// Require the react engine
-var renderer = require('react-engine');
+import keystone from 'keystone';
 
-var engine = renderer.server.create({
+// Require the react engine
+import renderer from 'react-engine';
+
+// Load the local .env file.
+dotenv.config();
+
+// See https://github.com/paypal/react-engine#data-for-component-rendering
+const engine = renderer.server.create({
 	performanceCollector: function(stats) {
-	    console.log(stats);
+		console.log(stats);
 	},
 	// your options here
+	// routes: require(path.join(__dirname + './routes/views'))
 });
 
 // Initialise Keystone with your project's configuration.
@@ -35,6 +41,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'cookie secret': process.env.COOKIE_SECRET
 });
 
 // Load your project's Models
@@ -57,6 +64,12 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	users: 'users',
 });
+
+if (!process.env.COOKIE_SECRET) {
+	console.log('----------------------------------------'
+	+ '\nWARNING: MISSING COOKIE SECRET'
+	+ '\n----------------------------------------');
+}
 
 // Start Keystone to connect to your database and initialise the web server
 
