@@ -16,7 +16,8 @@
     "node-sass-middleware": "^0.9.7",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "react-engine": "^4.2.0"
+    "react-engine": "^4.2.0",
+    "webpack": "^2.4.1"
   },
   "devDependencies": {
     "eslint": "^2.12.0",
