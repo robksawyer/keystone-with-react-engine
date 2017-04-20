@@ -14,11 +14,6 @@ import FlashMessage from './FlashMessage';
 // 				+flash-message(message, 'danger')
 
 class FlashMessages extends React.Component {
-
-	constructor(props){
-		super(props);
-	}
-
 	render(props){
 		if(!props.messages) {
 			return null;

@@ -7,18 +7,18 @@ import ExternalScripts from './ExternalScripts';
 
 class Body extends React.Component {
 
-	render(props){
+	render(){
 		return (
 			<body>
-				<Navigation navLinks={props.navLinks} user={props.user} />
+				<Navigation navLinks={this.props.navLinks} user={this.props.user} />
 				<div className="container">
 					<div className="jumbotron">
-						<Welcome user={props.user} section={props.section} />
+						<Welcome user={this.props.user} section={this.props.section} />
 					</div>
 				</div>
-				<DynamicBody intro={props.intro} children={props.children} messages={messages} />
+				<DynamicBody intro={this.props.intro} children={this.props.children} messages={this.props.messages} />
 				<Footer />
-				<ExternalScripts js={props.js} user={props.user} />
+				<ExternalScripts js={this.props.js} user={this.props.user} />
 			</body>
 		);
 	}

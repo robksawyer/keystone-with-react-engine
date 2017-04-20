@@ -2,8 +2,7 @@ import React from 'react';
 import FlashMessages from '../FlashMessages/FlashMessages';
 
 class DynamicBody extends React.Component {
-
-	render(props){
+	render(){
 		return (
 			<div id="body">
 				{
@@ -19,11 +18,11 @@ class DynamicBody extends React.Component {
 				{
 					//- Flash messages allow you to display once-off status messages to users, e.g. form
 					//- validation errors, success messages, etc.
-					<FlashMessages messages={props.messages} />
+					<FlashMessages messages={this.props.messages} />
 				}
 				{
 					//- The children block should contain the body of your template's content
-					props.children
+					this.props.children
 				}
 			</div>
 		);

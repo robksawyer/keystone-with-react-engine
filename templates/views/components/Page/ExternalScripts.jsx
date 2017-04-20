@@ -1,8 +1,7 @@
 import React from 'react';
 
 class ExternalScripts extends React.Component {
-
-	render(props){
+	render(){
 		return (
 			<div className='externalScripts'>
 				{
@@ -16,7 +15,7 @@ class ExternalScripts extends React.Component {
 					//- them specifically here, instead of bootstrap-3.3.5.min.js
 				}
 				<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
-				{ props.user && props.user.canAccessKeystone &&
+				{ this.props.user && this.props.user.canAccessKeystone &&
 					//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 					//- which generate links to edit content for users who can access Keystone
 					<script src="/keystone/js/content/editor.js"></script>
@@ -26,7 +25,7 @@ class ExternalScripts extends React.Component {
 					//- Add scripts that are globally required by your site here.
 
 					//- Include template-specific javascript files by extending the js block
-					props.js
+					this.props.js
 				}
 			</div>
 		);

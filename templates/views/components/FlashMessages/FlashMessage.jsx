@@ -17,9 +17,9 @@ import React from 'react';
 // 			= message
 
 class FlashMessage extends React.Component {
-  render(props){
+  render(){
     return (
-      <div className='alert alert-{props.type}'></div>
+      <div className='alert alert-{this.props.type}'></div>
     );
   };
 };

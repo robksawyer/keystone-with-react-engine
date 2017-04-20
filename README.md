@@ -23,3 +23,4 @@ This setup renders one page and allows interactions. It does not render a full S
 
 # Resources
 - [react-engine](https://github.com/paypal/react-engine)
+- [Isomorphic React Apps with React-Engine](https://www.paypal-engineering.com/2015/04/27/isomorphic-react-apps-with-react-engine/)

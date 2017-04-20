@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Default extends React.Component {
-	render(props) {
+	render() {
 		console.log(this.props);
 		return (
 			<html>
@@ -11,4 +11,4 @@ class Default extends React.Component {
 	};
 };
 
-module.exports = Default;
+export default Default;

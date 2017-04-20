@@ -1,8 +1,7 @@
 import React from 'react';
 
 class Welcome extends React.Component {
-
-	render(props){
+	render(){
 		return (
 			<div>
 				<img src="/images/logo.svg" width="160" />
@@ -11,7 +10,7 @@ class Welcome extends React.Component {
 				<p>It includes the latest versions of <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a> and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.</p>
 				<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
 				<hr />
-				{ (props.user && props.user.canAccessKeystone)
+				{ (this.props.user && this.props.user.canAccessKeystone)
 					?
 					<p>
 						<a href='/keystone' className="btn btn-lg btn-primary">
@@ -32,7 +31,7 @@ class Welcome extends React.Component {
 					<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
 				</p>
 				<hr />
-				<button className="btn btn-primary btn-large" onClick={() => alert('An alert from the frontend! with props, the section is: ' + props.section)}>
+				<button className="btn btn-primary btn-large" onClick={() => alert('An alert from the frontend! with props, the section is: ' + this.props.section)}>
 					Click here to see frontend react in the works
 				</button>
 			</div>

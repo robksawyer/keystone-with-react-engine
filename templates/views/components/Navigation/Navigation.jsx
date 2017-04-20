@@ -3,8 +3,7 @@ import LoginButton from '../Buttons/LoginButton';
 import NavItem from './NavItem';
 
 class Navigation extends React.Component {
-
-	render(props){
+	render(){
 		return (
 			<div id="header">
 				<div className="container">
@@ -31,11 +30,11 @@ class Navigation extends React.Component {
 
 							<div className="collapse navbar-collapse">
 								<ul className="nav navbar-nav navbar-left">
-									{ props.navLinks.map((link) =>
-										<NavItem section={props.section} />
+									{ this.props.navLinks.map((link) =>
+										<NavItem section={this.props.section} />
 									)}
 								</ul>
-								<LoginButton user={props.user} />
+								<LoginButton user={this.props.user} />
 							</div>
 						</div>
 					</div>
