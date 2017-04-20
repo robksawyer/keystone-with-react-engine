@@ -13,7 +13,7 @@ class DynamicBody extends React.Component {
 
 				{
 					//- The Intro block appears above flash messages (used for temporary information display)
-					props.intro
+					this.props.intro
 				}
 				{
 					//- Flash messages allow you to display once-off status messages to users, e.g. form

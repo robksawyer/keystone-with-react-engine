@@ -1,9 +1,19 @@
 import React from 'react';
 import LoginButton from '../Buttons/LoginButton';
-import NavItem from './NavItem';
 
 class Navigation extends React.Component {
 	render(){
+
+		function NavItem(props){
+			return (
+				<li key={props.link.key} className={props.section == props.link.key ? 'active' : null}>
+					<a href={props.link.href}>
+						{props.link.label}
+					</a>
+				</li>
+			);
+		}
+
 		return (
 			<div id="header">
 				<div className="container">
@@ -31,7 +41,7 @@ class Navigation extends React.Component {
 							<div className="collapse navbar-collapse">
 								<ul className="nav navbar-nav navbar-left">
 									{ this.props.navLinks.map((link) =>
-										<NavItem section={this.props.section} />
+										<NavItem link={link} section={this.props.section} />
 									)}
 								</ul>
 								<LoginButton user={this.props.user} />

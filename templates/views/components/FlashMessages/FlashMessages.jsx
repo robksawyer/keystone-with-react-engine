@@ -14,11 +14,11 @@ import FlashMessage from './FlashMessage';
 // 				+flash-message(message, 'danger')
 
 class FlashMessages extends React.Component {
-	render(props){
-		if(!props.messages) {
+	render(){
+		if(!this.props.messages) {
 			return null;
 		}
-		const messages = props.messages.map((message) =>
+		const messages = this.props.messages.map((message) =>
 			<FlashMessage message={message} />
 		);
 		if(messages) {
