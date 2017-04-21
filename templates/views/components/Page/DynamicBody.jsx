@@ -1,5 +1,5 @@
 import React from 'react';
-import FlashMessages from '../FlashMessages/FlashMessages';
+import FlashMessages from '../Notifications/FlashMessages';
 
 class DynamicBody extends React.Component {
 	render(){
