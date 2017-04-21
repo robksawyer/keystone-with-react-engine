@@ -6,7 +6,7 @@ class Navigation extends React.Component {
 
 		function NavItem(props){
 			return (
-				<li key={props.link.key} className={props.section == props.link.key ? 'active' : null}>
+				<li className={props.section == props.link.key ? 'active' : null}>
 					<a href={props.link.href}>
 						{props.link.label}
 					</a>
@@ -41,7 +41,7 @@ class Navigation extends React.Component {
 							<div className="collapse navbar-collapse">
 								<ul className="nav navbar-nav navbar-left">
 									{ this.props.navLinks.map((link) =>
-										<NavItem link={link} section={this.props.section} />
+										<NavItem key={link.key} link={link} section={this.props.section} />
 									)}
 								</ul>
 								<LoginButton user={this.props.user} />
