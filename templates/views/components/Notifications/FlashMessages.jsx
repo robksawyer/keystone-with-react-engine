@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FlashMessage from './FlashMessage';
 
 // // TODO: Add the following
@@ -13,7 +13,7 @@ import FlashMessage from './FlashMessage';
 // 			each message in messages.error
 // 				+flash-message(message, 'danger')
 
-class FlashMessages extends React.Component {
+class FlashMessages extends Component {
 	render(){
 		if(!this.props.messages) {
 			return null;

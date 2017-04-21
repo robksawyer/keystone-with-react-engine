@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
 // TODO: Add the following
@@ -16,7 +16,7 @@ import React from 'react';
 // 		else
 // 			= message
 
-class FlashMessage extends React.Component {
+class FlashMessage extends Component {
   render(){
     return (
       <div className='alert alert-{this.props.type}'></div>

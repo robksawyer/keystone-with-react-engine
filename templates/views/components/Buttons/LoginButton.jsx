@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class LoginButton extends React.Component {
+class LoginButton extends Component {
 
 	render(props){
 		return (

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ExternalScripts extends React.Component {
+class ExternalScripts extends Component {
 	render(){
 		return (
 			<div className='externalScripts'>

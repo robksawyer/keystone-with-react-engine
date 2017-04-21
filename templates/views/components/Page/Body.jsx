@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Welcome from '../Welcome/Welcome';
 import Navigation from '../Navigation/Navigation';
 import DynamicBody from './DynamicBody';
 import Footer from './Footer';
 import ExternalScripts from './ExternalScripts';
 
-class Body extends React.Component {
+class Body extends Component {
 
 	render(){
 		return (

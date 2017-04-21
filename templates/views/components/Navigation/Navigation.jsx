@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LoginButton from '../Buttons/LoginButton';
 
-class Navigation extends React.Component {
+class Navigation extends Component {
 	render(){
 
 		function NavItem(props){

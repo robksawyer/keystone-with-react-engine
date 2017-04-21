@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../components/Page/Header';
 import Body from '../components/Page/Body';
+import { StyleSheet, css } from 'aphrodite';
 
-class Default extends React.Component {
+class Default extends Component {
 	render() {
 		return (
 			<html>
