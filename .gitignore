@@ -32,3 +32,6 @@ node_modules
 
 # Don't include the bundle. This is generated via webpack or npm start
 public/js/bundle.**
+
+# Bower components
+public/vendors
