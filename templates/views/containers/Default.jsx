@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from '../components/Page/Header';
+import Body from '../components/Page/Body';
 
 class Default extends React.Component {
 	render() {
 		return (
 			<html>
-				{this.props.children}
+				<Header css={this.props.css} head={this.props.head} user={this.props.user} title={(this.props.title) ? this.props.title : 'React-example'} />
+				<Body children={this.props.children} section={this.props.section} navLinks={this.props.navLinks} user={this.props.user} messages={this.props.messages} js={this.props.js} />
 			</html>
 		);
 	};

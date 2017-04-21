@@ -1,7 +1,12 @@
 import React from 'react';
 
 class Header extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render(){
+		console.log(this.props)
 		return (
 			<head>
 				<meta charSet="utf-8" />
