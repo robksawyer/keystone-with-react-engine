@@ -29,6 +29,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "build": "webpack",
     "start": "webpack && node preprocessor.js"
   }
 }
