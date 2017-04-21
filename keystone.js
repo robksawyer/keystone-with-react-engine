@@ -28,11 +28,11 @@ keystone.init({
 	'name': 'React-example',
 	'brand': 'React-example',
 
-	'sass': 'public',
+	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 
-	'views': 'templates/views',
+	'views': 'client/views',
 	'view engine': 'jsx',
 	'custom engine': engine,
 	'view': renderer.expressView,
@@ -45,7 +45,7 @@ keystone.init({
 });
 
 // Load your project's Models
-keystone.import('models');
+keystone.import('./server/models');
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
@@ -58,7 +58,7 @@ keystone.set('locals', {
 });
 
 // Load your project's Routes
-keystone.set('routes', require('./routes'));
+keystone.set('routes', require('./server/routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {

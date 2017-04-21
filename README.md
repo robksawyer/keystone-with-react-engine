@@ -1,6 +1,20 @@
 # keystone-with-react-engine
 KeystoneJS CMS with React Engine as rendering engine, so we can render backend .jsx templates
 
+# Getting Started
+
+First you'll need a few tools. These include [brew](https://brew.sh) and  [yarn](https://code.facebook.com/posts/1840075619545360/yarn-a-new-package-manager-for-javascript/). Install these and then come back and run the following commands in your favorite shell/terminal.
+
+```
+$ brew install git
+$ git clone https://github.com/robksawyer/keystone-with-react-engine
+$ cd keystone-with-react-engine
+$ brew install yarn
+$ yarn
+$ npm start
+$ npm run watch
+```
+
 # KeystoneJS
 I've used the 'yo keystone' command, to create a default KeystoneJS project, rewrote it to JSX templates and added React Engine as the view engine.
 

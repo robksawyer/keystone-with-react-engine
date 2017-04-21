@@ -28,13 +28,14 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views'),
+	// This is relative to where routes are set inside of the keystone.js file
+	views: importRoutes('./controllers'),
 };
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
-	app.get('/', routes.views.app);
+	app.get('/', routes.controllers.app);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

@@ -21,6 +21,9 @@ module.exports = {
 
   entry: {
     index: path.resolve(__dirname, 'index.js'),
+    // 'style-loader': path.resolve(__dirname, 'public/styles'),
+    // 'css-loader': path.resolve(__dirname, 'public/styles/site.css'),
+    // 'less-loader': path.resolve(__dirname, 'public/styles/site.css'),
   },
 
   output: {
@@ -30,6 +33,24 @@ module.exports = {
 
   module: {
     rules: [
+      // {
+      //   test: /\.less$/,
+      //   use: [
+      //     {
+      //       loader: "style-loader" // creates style nodes from JS strings
+      //     }, {
+      //       loader: "css-loader", // translates CSS into CommonJS
+      //       options: {
+      //         sourceMap: true
+      //       }
+      //     }, {
+      //       loader: "less-loader", // compiles Less to CSS
+      //       options: {
+      //         sourceMap: true
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
@@ -41,8 +62,7 @@ module.exports = {
             },
           }
         ],
-      },
-    ],
+    }]
   },
 
   resolve: {

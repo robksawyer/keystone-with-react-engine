@@ -1,0 +1,17 @@
+# Read more at https://flow.org/en/docs/config/
+[ignore]
+.*/public/.*
+.*/tests/.*
+
+[include]
+./client/**/*.jsx
+
+[libs]
+# ./node_modules/keystone/lib
+# ./node_modules/elemental/lib
+
+# Read more at https://flow.org/en/docs/config/options/
+[options]
+all=true
+emoji=true
+log.file=./logs/flow/debug.log
