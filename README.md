@@ -22,6 +22,7 @@ This setup renders one page and allows interactions. It does not render a full S
 
 
 # Resources
-- [react-engine](https://github.com/paypal/react-engine)
+- [paypal/react-engine](https://github.com/paypal/react-engine)
 - [Isomorphic React Apps with React-Engine](https://www.paypal-engineering.com/2015/04/27/isomorphic-react-apps-with-react-engine/)
 - [Khan/aphrodite](https://github.com/Khan/aphrodite): Inline Styles that work
+- [Must.js](https://github.com/moll/js-must) - Must.js is a testing and assertion library for JavaScript and Node.js with a friendly BDD syntax (awesome.must.be.true()).

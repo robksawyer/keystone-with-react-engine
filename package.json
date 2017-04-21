@@ -13,8 +13,10 @@
     "json-loader": "^0.5.4",
     "keystone": "^4.0.0-beta.1",
     "lodash": "^4.13.1",
+    "must": "^0.13.4",
     "node-sass": "^3.3.2",
     "node-sass-middleware": "^0.9.7",
+    "object-assign": "^4.1.1",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "webpack": "^2.4.1"
