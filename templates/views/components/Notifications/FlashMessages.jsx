@@ -1,4 +1,3 @@
-import React from 'react';
 import FlashMessage from './FlashMessage';
 
 // // TODO: Add the following
@@ -13,12 +12,11 @@ import FlashMessage from './FlashMessage';
 // 			each message in messages.error
 // 				+flash-message(message, 'danger')
 
-class FlashMessages extends React.Component {
-	render(){
-		if(!this.props.messages) {
+function FlashMessages(props) {
+		if(!props.messages) {
 			return null;
 		}
-		const messages = this.props.messages.map((message) =>
+		const messages = props.messages.map((message) =>
 			<FlashMessage message={message} />
 		);
 		if(messages) {
@@ -28,7 +26,6 @@ class FlashMessages extends React.Component {
 				<div className="flash-messages container">{messages}</div>
 			);
 		}
-	}
-};
+}
 
 module.exports = FlashMessages;

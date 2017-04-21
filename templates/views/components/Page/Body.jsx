@@ -5,23 +5,20 @@ import DynamicBody from './DynamicBody';
 import Footer from './Footer';
 import ExternalScripts from './ExternalScripts';
 
-class Body extends React.Component {
-
-	render(){
-		return (
-			<body>
-				<Navigation navLinks={this.props.navLinks} user={this.props.user} />
-				<div className="container">
-					<div className="jumbotron">
-						<Welcome user={this.props.user} section={this.props.section} />
-					</div>
+function Body(props) {
+	return (
+		<body>
+			<Navigation navLinks={props.navLinks} user={props.user} />
+			<div className="container">
+				<div className="jumbotron">
+					<Welcome user={props.user} section={props.section} />
 				</div>
-				<DynamicBody intro={this.props.intro} children={this.props.children} messages={this.props.messages} />
-				<Footer />
-				<ExternalScripts js={this.props.js} user={this.props.user} />
-			</body>
-		);
-	}
+			</div>
+			<DynamicBody intro={props.intro} children={props.children} messages={props.messages} />
+			<Footer />
+			<ExternalScripts js={props.js} user={props.user} />
+		</body>
+	);
 };
 
 module.exports = Body;

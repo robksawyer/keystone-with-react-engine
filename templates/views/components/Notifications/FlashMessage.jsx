@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 // TODO: Add the following
 // mixin flash-message(message, type)
 // 	div(class='alert alert-' + type)
@@ -16,12 +13,10 @@ import React from 'react';
 // 		else
 // 			= message
 
-class FlashMessage extends React.Component {
-  render(){
-    return (
-      <div className='alert alert-{this.props.type}'></div>
-    );
-  };
+function FlashMessage(props) {
+  return (
+    <div className='alert alert-{props.type}'></div>
+  );
 };
 
 module.exports = FlashMessage;
