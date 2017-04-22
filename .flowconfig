@@ -1,10 +1,15 @@
 # Read more at https://flow.org/en/docs/config/
 [ignore]
 .*/public/.*
+.*/__tests__/.*
 .*/tests/.*
+.*/node_modules/.*
+.*/client/**/tests/.*
+.*/node_modules/.*/test/.*
+.*/node_modules/.*/tests/.*
 
 [include]
-./client/**/*.jsx
+./client/*
 
 [libs]
 # ./node_modules/keystone/lib
@@ -12,6 +17,9 @@
 
 # Read more at https://flow.org/en/docs/config/options/
 [options]
-all=true
+# all=true
+module.file_ext=.js
+module.file_ext=.jsx
+sharedmemory.hash_table_pow=19
 emoji=true
 log.file=./logs/flow/debug.log

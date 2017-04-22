@@ -11,7 +11,6 @@
     "babel-register": "^6.18.0",
     "dotenv": "^2.0.0",
     "express-less-middleware": "^1.4.5",
-    "flow": "^0.2.3",
     "global": "^4.3.2",
     "json-loader": "^0.5.4",
     "keystone": "^4.0.0-beta.1",
@@ -21,7 +20,9 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-engine": "^4.3.0",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -45,10 +46,10 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prebuild": "./node_modules/.bin/flow",
-    "build": "./node_modules/.bin/webpack",
-    "start": "./node_modules/.bin/webpack && node preprocessor.js",
+    "prebuild": "flow",
+    "build": "webpack",
+    "start": "webpack && node preprocessor.js",
     "prepublish": "yarn run build",
-    "watch": "./node_modules/.bin/flow status"
+    "watch": "flow status"
   }
 }

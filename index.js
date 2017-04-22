@@ -13,7 +13,7 @@ const options = {
   // to resolve the file that was rendered.
   // This should launch App.jsx
   viewResolver: function(viewName) {
-    return require('./client/views/' + viewName);
+    return require('./client/views' + viewName);
   }
 };
 
