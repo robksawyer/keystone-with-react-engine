@@ -11,14 +11,13 @@ const options = {
 
   // supply a function that can be called
   // to resolve the file that was rendered.
-  // This should launch App.jsx
+  // This should launch App.js
   viewResolver: function(viewName) {
     return require('./client/views' + viewName);
   }
 };
 
 document.addEventListener('DOMContentLoaded', function onLoad() {
-  console.log(options);
   // boot the app when the DOM is ready
   ReactEngineClient.boot(options);
 });

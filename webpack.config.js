@@ -1,10 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const context = path.resolve(__dirname, 'client/views');
 
 const production = process.env.NODE_ENV === 'production' ? true : false;
 
 module.exports = {
-
+  context,
+  
   stats: {
     assets: false,
     colors: true,
@@ -15,57 +17,84 @@ module.exports = {
     chunkModules: false
   },
 
-  context: path.resolve(__dirname, '.'),
-
-  devtool: production ? null : 'source-map',
-
   entry: {
-    index: path.resolve(__dirname, 'index.js'),
-    // 'style-loader': path.resolve(__dirname, 'public/styles'),
-    // 'css-loader': path.resolve(__dirname, 'public/styles/site.css'),
-    // 'less-loader': path.resolve(__dirname, 'public/styles/site.css'),
+    app: [
+      'eventsource-polyfill', // necessary for hot reloading with IE
+      'webpack-hot-middleware/client',
+      './client/views/App.jsx'
+    ],
+    vendor: [
+      'react',
+      'react-dom',
+      'react-router',
+      'es6-promise',
+      'history',
+      'core-js',
+      'lodash',
+      'eventsource-polyfill'
+    ]
   },
 
   output: {
-    path: path.resolve(__dirname, 'public/js'),
-    filename: 'bundle.js',
+    path: path.resolve("./public/js"),
+    filename: '[name].bundle.js',
+    chunkFilename: '[id].chunk.js',
+    publicPath: '/public/'
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.optimize.OccurrenceOrderPlugin(),
+    //new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false },
+    }),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "bundle",
+      filename: "bundle.js",
+    })
+    //new webpack.DefinePlugin({
+    //  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    //})
+  ],
 
   module: {
     rules: [
-      // {
-      //   test: /\.less$/,
-      //   use: [
-      //     {
-      //       loader: "style-loader" // creates style nodes from JS strings
-      //     }, {
-      //       loader: "css-loader", // translates CSS into CommonJS
-      //       options: {
-      //         sourceMap: true
-      //       }
-      //     }, {
-      //       loader: "less-loader", // compiles Less to CSS
-      //       options: {
-      //         sourceMap: true
-      //       }
-      //     }
-      //   ]
-      // },
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.css$/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "style-loader"
+          },
+          {
+            loader: "less-loader"
+          },
+          {
+            loader: "css-loader",
             options: {
-              presets: ['react', 'es2015', 'stage-2'],
-            },
+              modules: true
+            }
           }
-        ],
-    }]
+        ]
+      },
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /(node_modules|bower_components)/,
+        options: {
+          presets: ['react', 'es2015', 'stage-3'],
+        },
+      }
+    ]
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-  },
+    alias: {
+      'react': path.resolve('./node_modules/react'), //force sub node_modules of node_module to use the primary version of react (eg react-context)
+    },
+    extensions: [".js", ".jsx", ".json", ".css"],
+  	// These extensions are tried when resolving a file
+  }
+
 };
